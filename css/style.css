@@ -1,0 +1,111 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, Arial, sans-serif;
+}
+
+body{
+    background-color: #f4f6f8;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.main{
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 420px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.header{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.header h2{
+    font-size: 1.6rem;
+}
+
+.expense-form{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.expense-form label{
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.expense-form input, .expense-form select{
+    font-size: 0.95rem;
+    padding:8px 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+
+.expense-form input:focus,
+.expense-form select:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.expense-form button{
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 6px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+.expense-form button:hover {
+  background-color: #005fcc;
+}
+
+.expense-list{
+    margin-bottom : 10px;
+}
+
+.expense-list h2{
+    margin-top: 10px;
+    font-size: 1.2rem;
+}
+
+.expense-list ul{
+    list-style: none;
+}
+
+
+.expense-list li {
+  padding: 8px;
+  border-bottom: 1px solid #e0e0e0;
+  font-size: 0.95rem;
+}
+
+.empty-state{
+    text-align: center;
+    font-style: italic;
+    color : #888;
+}
+
+.expense-summary{
+    text-align: right;
+    border-top: 2px solid #eee;
+    padding-top: 10px;
+}
+
+.expense-summary p {
+  font-size: 1.1rem;
+  font-weight: bold;
+}

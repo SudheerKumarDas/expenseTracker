@@ -3,21 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>expenseTracker</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <div class="main">
-
         <div class="header">
             <h2>Expense Tracker</h2>
         </div>
 
         <form class="expense-form">
             <label for="expense-name">Expense Name</label>
-            <input type="text" name="expense-name" id="expense-name">
+            <input type="text" name="expense-name" id="expense-name" placeholder="expense name" required> 
             <label for="amount">Amount</label>
-            <input type="number" name="amount" id="amount">
+            <input type="number" name="amount" id="amount" placeholder="amount spent on" required>
             <label for="expense-category">Category</label>
             <select name="expense-category" id="expense-category">
                 <option value="clothing">Clothing</option>

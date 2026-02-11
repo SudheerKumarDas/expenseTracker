@@ -122,5 +122,8 @@ The application is built mobile-first and adapts to:
 Built by **Sudheer Das**
 Frontend Practice Project — 30 Day Challenge
 
-* Add a **Live Demo badge** Add GitHub repo stats badges
-* Make a more **recruiter-opti
+
+
+
+
+

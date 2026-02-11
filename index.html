@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>expenseTracker</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="main">
@@ -51,10 +51,17 @@
         </div>
 
         <div class="expense-summary">
-            <p>Total: <span class="total-amount">---</span></p>
+            <p>Total: Rs. <span class="total-amount">0</span></p>
+            <p>Food: Rs. <span class="food-total">0</span></p>
+            <p>Clothing: Rs. <span class="clothing-total">0</span></p>
+            <p>Accessories: Rs. <span class="accessories-total">0</span></p>
+            <p>Random: Rs. <span class="random-total">0</span></p>
+            <p>Highest Expense: Rs. <span class="highest-expense">0</span></p>
+
         </div>
+        <button id="clear-all">Clear All</button>
     </div>
 
-    <script src="./js/ui.js"></script>
+    <script src="ui.js"></script>
 </body>
 </html>

@@ -34,6 +34,22 @@
             </ul>
         </div>
 
+        <div class="filters">
+            <select id="filter-category">
+                <option value="all">All</option>
+                <option value="food">Food</option>
+                <option value="clothing">Clothing</option>
+                <option value="accessories">Accessories</option>
+                <option value="random">Random</option>
+            </select>
+            
+            <input type="number" id="filter-amount" placeholder="Minimum Amount">
+
+            <button id="reset-filter">
+                Reset
+            </button>
+        </div>
+
         <div class="expense-summary">
             <p>Total: <span class="total-amount">---</span></p>
         </div>

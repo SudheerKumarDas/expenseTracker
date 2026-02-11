@@ -19,6 +19,23 @@ const accessoriesTotalEle = document.querySelector(".accessories-total")
 const randomTotalEle = document.querySelector(".random-total");
 const highestExpenseEle = document.querySelector(".highest-expense");
 
+
+const clearAllBtn = document.querySelector("#clear-all");
+
+const storedExpenses = localStorage.getItem("expenses");
+if(storedExpenses){
+    expenses.push(...JSON.parse(storedExpenses));
+}
+renderExpenses(expenses);
+updateSummary(expenses);
+const total = getTotal(expenses);
+totalAmountEle.innerText = total;
+
+
+function saveExpenses(expenses){
+    localStorage.setItem("expenses",JSON.stringify(expenses));
+}
+
 function getTotal(expenses){
     let total = 0;
     for(let i=0; i<expenses.length;i++){
@@ -49,6 +66,8 @@ expenseForm.addEventListener("submit",function(e){
     const total = getTotal(expenses);
     totalAmountEle.innerText = total;
     updateSummary(expenses);
+
+    saveExpenses(expenses);
 
     expenseName.value = "";
     expenseAmount.value = "";
@@ -152,3 +171,11 @@ function updateSummary(expenses){
     randomTotalEle.innerText = total.random;
     highestExpenseEle.innerText = highest;
 }
+
+clearAllBtn.addEventListener("click",function(expenses){
+    expenses.length=0;
+    localStorage.removeItem("expenses");
+    updateSummary(expenses);
+    renderExpenses(expenses);
+    totalAmountEle.innerText = 0;
+})

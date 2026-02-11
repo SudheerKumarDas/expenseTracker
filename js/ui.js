@@ -4,7 +4,7 @@ const expenseForm = document.querySelector(".expense-form");
 const expenseName = document.querySelector("#expense-name");
 const expenseAmount = document.querySelector("#amount");
 const expenseCategory = document.querySelector("#expense-category");
-const totalAmount = document.querySelector(".total-amount");
+const totalAmountEle = document.querySelector(".total-amount");
 
 const expenseList = document.querySelector(".expense-list ul");
 const emptyList = document.querySelector(".empty-state");
@@ -12,6 +12,12 @@ const emptyList = document.querySelector(".empty-state");
 const filterCategory = document.querySelector("#filter-category");
 const filterAmount = document.querySelector("#filter-amount");
 const resetBtn = document.querySelector("#reset-filter");
+
+const foodTotalEle = document.querySelector(".food-total");
+const clothingTotalEle = document.querySelector(".clothing-total");
+const accessoriesTotalEle = document.querySelector(".accessories-total")
+const randomTotalEle = document.querySelector(".random-total");
+const highestExpenseEle = document.querySelector(".highest-expense");
 
 function getTotal(expenses){
     let total = 0;
@@ -41,7 +47,8 @@ expenseForm.addEventListener("submit",function(e){
     console.log(expenses);
 
     const total = getTotal(expenses);
-    totalAmount.innerText = total;
+    totalAmountEle.innerText = total;
+    updateSummary(expenses);
 
     expenseName.value = "";
     expenseAmount.value = "";
@@ -109,3 +116,39 @@ resetBtn.addEventListener("click",function(){
     filterAmount.value="";
     renderExpenses(expenses);
 })
+
+function totalByCategory(expenses){
+    let totals = {
+        food : 0,
+        clothing : 0,
+        accessories : 0,
+        random : 0
+    }
+
+    for(let i=0;i<expenses.length;i++){
+        totals[expenses[i].category]+=expenses[i].amount;
+    }
+
+    return totals;
+}
+
+function getHighestExpense(expenses){
+    let highest = 0;
+    for(let i=0;i<expenses.length;i++){
+        if(highest<=expenses[i].amount){
+            highest=expenses[i].amount;
+        }
+    }
+    return highest;
+}
+
+function updateSummary(expenses){
+    const total = totalByCategory(expenses);
+    const highest = getHighestExpense(expenses);
+
+    foodTotalEle.innerText = total.food;
+    clothingTotalEle.innerText = total.clothing;
+    accessoriesTotalEle.innerText = total.accessories;
+    randomTotalEle.innerText = total.random;
+    highestExpenseEle.innerText = highest;
+}
